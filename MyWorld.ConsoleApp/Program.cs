@@ -5,7 +5,7 @@ public static class Program
     public static void Main()
     {
         Console.WriteLine("Select an option: ");
-        Console.WriteLine("1. Bubble Sort Test");
+        Console.WriteLine("1. Test Bubble Sort");
         Console.Write("Enter choice: ");
 
         string? choice = Console.ReadLine();
