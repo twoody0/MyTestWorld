@@ -4,6 +4,25 @@ public static class Program
 {
     public static void Main()
     {
+        Console.WriteLine("Select an option: ");
+        Console.WriteLine("1. Bubble Sort Test");
+        Console.Write("Enter choice: ");
+
+        string? choice = Console.ReadLine();
+        switch (choice)
+        {
+            case "1":
+                TestBubbleSort();
+                break;
+
+            default:
+                Console.WriteLine("Invalid choice.");
+                break;
+        }
+    }
+
+    public static void TestBubbleSort()
+    {
         int[] items = new int[5];
 
         for (int i = 0; i < items.Length; i++)
