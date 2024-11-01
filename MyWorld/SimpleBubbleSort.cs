@@ -1,6 +1,6 @@
 ﻿namespace MyWorld;
 
-public class SimpleSort
+public class SimpleBubbleSort
 {
     public enum SortType
     {
