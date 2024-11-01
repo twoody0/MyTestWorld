@@ -18,7 +18,14 @@ public static class Program
         }
 
         BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.AlphabeticalGreaterThan);
+        Console.WriteLine("Alphabetical greater than comparison: ");
+        for (int i = 0; i < items.Length; i++)
+        {
+            Console.WriteLine(items[i]);
+        }
 
+        BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.GreaterThan);
+        Console.WriteLine("Numerical greater than comparison: ");
         for (int i = 0; i < items.Length; i++)
         {
             Console.WriteLine(items[i]);
