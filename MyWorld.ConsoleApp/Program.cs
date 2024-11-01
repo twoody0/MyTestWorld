@@ -17,7 +17,15 @@ public static class Program
             }
         }
 
-        BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.AlphabeticalGreaterThan);
+        //BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.AlphabeticalGreaterThan);
+
+        BubbleSortDelegate.BubbleSort(items, (int first, int second) =>
+        {
+            return first < second;
+        });
+
+        // Lambda functions are mostly good for when code reusability isn't necessary.
+
         Console.WriteLine("Alphabetical greater than comparison: ");
         for (int i = 0; i < items.Length; i++)
         {
