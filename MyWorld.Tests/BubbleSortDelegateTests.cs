@@ -1,6 +1,6 @@
 namespace MyWorld.Tests;
 
-public class UnitTest1
+public class BubbleSortDelegateTests
 {
     [Fact]
     public void Test1()
