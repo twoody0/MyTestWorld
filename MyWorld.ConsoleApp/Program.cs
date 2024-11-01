@@ -36,7 +36,34 @@ public static class Program
             }
         }
 
-        //BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.AlphabeticalGreaterThan);
+        BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.AlphabeticalGreaterThan);
+
+        Console.WriteLine("Alphabetical greater than sorting: ");
+
+        for (int i = 0; i < items.Length; i++)
+        {
+            Console.WriteLine(items[i]);
+        }
+
+        BubbleSortDelegate.BubbleSort(items, (int first, int second) =>
+        {
+            return first.ToString().CompareTo(second.ToString()) < 0;
+        });
+
+        Console.WriteLine("Alphabetical less than sorting: ");
+
+        for (int i = 0; i < items.Length; i++)
+        {
+            Console.WriteLine(items[i]);
+        }
+
+        BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.GreaterThan);
+
+        Console.WriteLine("Numerical greater than sorting: ");
+        for (int i = 0; i < items.Length; i++)
+        {
+            Console.WriteLine(items[i]);
+        }
 
         BubbleSortDelegate.BubbleSort(items, (int first, int second) =>
         {
@@ -45,14 +72,8 @@ public static class Program
 
         // Lambda functions are mostly good for when code reusability isn't necessary.
 
-        Console.WriteLine("Alphabetical greater than comparison: ");
-        for (int i = 0; i < items.Length; i++)
-        {
-            Console.WriteLine(items[i]);
-        }
+        Console.WriteLine("Numerical less than sorting: ");
 
-        BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.GreaterThan);
-        Console.WriteLine("Numerical greater than comparison: ");
         for (int i = 0; i < items.Length; i++)
         {
             Console.WriteLine(items[i]);
