@@ -6,9 +6,22 @@ public static class Program
     {
         Console.WriteLine("Select an option: ");
         Console.WriteLine("1. Test Bubble Sort");
-        Console.Write("Enter choice: ");
 
-        string? choice = Console.ReadLine();
+        //Paramaterless statement lambda
+        Func<string> getuserInput = () =>
+        {
+            string? input;
+            do
+            {
+                Console.Write("Enter choice: ");
+                input = Console.ReadLine();
+            }
+            while (string.IsNullOrWhiteSpace(input));
+            return input!;
+        };
+
+        string? choice = getuserInput();
+
         switch (choice)
         {
             case "1":
@@ -71,6 +84,7 @@ public static class Program
         });
 
         // Lambda functions are mostly good for when code reusability isn't necessary.
+        // Also called anonymous functions.
 
         Console.WriteLine("Numerical less than sorting: ");
 
