@@ -15,4 +15,18 @@ public class BubbleSortDelegateTests
         // Assert
         Assert.Equal(items, expectedItems);
     }
+
+    [Fact]
+    public void AlphabeticalGreaterThan_ArrayOfNumbers_CorrectlySortsAlphabetically()
+    {
+        // Arrange
+        int[] items = { 3, 14, 12, 1, 5 };
+        int[] expectedItems = { 1, 12, 14, 3, 5 };
+
+        // Act
+        BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.AlphabeticalGreaterThan);
+
+        // Assert
+        Assert.Equal(items, expectedItems);
+    }
 }
