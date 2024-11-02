@@ -10,7 +10,7 @@ public class BubbleSortDelegateTests
         int[] expectedItems = { 2, 3, 5, 6, 8 };
 
         // Act
-        BubbleSortDelegate.BubbleSort(items, (x, y) => x > y);
+        BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.GreaterThan);
 
         // Assert
         Assert.Equal(items, expectedItems);
