@@ -58,12 +58,11 @@ public static class Program
             Console.WriteLine(items[i]);
         }
 
+        // Anonymous lambda functions are mostly good for when code reusability isn't necessary.
         BubbleSortDelegate.BubbleSort(items, (int first, int second) =>
         {
             return first.ToString().CompareTo(second.ToString()) < 0;
         });
-
-        // Anonymous lambda functions are mostly good for when code reusability isn't necessary.
 
         Console.WriteLine($"{Environment.NewLine}Alphabetical less than sorting: ");
 
@@ -80,10 +79,9 @@ public static class Program
             Console.WriteLine(items[i]);
         }
 
+        // Passing a Delegate with an Expression Lambda
         BubbleSortDelegate.BubbleSort
             (items, (int first, int second) => first < second);
-
-        // Passing a Delegate with an Expression Lambda
 
         Console.WriteLine($"{Environment.NewLine}Numerical less than sorting: ");
 
