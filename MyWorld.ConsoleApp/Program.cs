@@ -6,6 +6,7 @@ public static class Program
     {
         Console.WriteLine("Select an option: ");
         Console.WriteLine("1. Test Bubble Sort");
+        Console.WriteLine("2. Test thermostat event publisher");
 
         //Paramaterless statement lambda
         Func<string> getuserInput = () =>
@@ -26,6 +27,10 @@ public static class Program
         {
             case "1":
                 TestBubbleSort();
+                break;
+
+            case "2":
+                TestThermostat();
                 break;
 
             default:
@@ -89,5 +94,25 @@ public static class Program
         {
             Console.WriteLine(items[i]);
         }
+    }
+
+    public static void TestThermostat()
+    {
+        ThermostatEventPublisher thermostat = new();
+        HeaterDelegate heater = new(60);
+        CoolerDelegate cooler = new(80);
+
+        // These are my two subscribers
+        thermostat.OnTemperatureChange += heater.OnTemperatureChanged;
+        thermostat.OnTemperatureChange += cooler.OnTemperatureChanged;
+
+        Console.Write("Enter temperature: ");
+        string? temperature = Console.ReadLine();
+        if (!int.TryParse(temperature, out int currentTemperature))
+        {
+            Console.WriteLine($"'{temperature}' is not a valid integer.");
+            return;
+        }
+        thermostat.CurrentTemperature = currentTemperature;
     }
 }
