@@ -51,7 +51,7 @@ public static class Program
 
         BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.AlphabeticalGreaterThan);
 
-        Console.WriteLine("Alphabetical greater than sorting: ");
+        Console.WriteLine($"{Environment.NewLine}Alphabetical greater than sorting: ");
 
         for (int i = 0; i < items.Length; i++)
         {
@@ -65,7 +65,7 @@ public static class Program
 
         // Anonymous lambda functions are mostly good for when code reusability isn't necessary.
 
-        Console.WriteLine("Alphabetical less than sorting: ");
+        Console.WriteLine($"{Environment.NewLine}Alphabetical less than sorting: ");
 
         for (int i = 0; i < items.Length; i++)
         {
@@ -74,7 +74,7 @@ public static class Program
 
         BubbleSortDelegate.BubbleSort(items, BubbleSortDelegate.GreaterThan);
 
-        Console.WriteLine("Numerical greater than sorting: ");
+        Console.WriteLine($"{Environment.NewLine}Numerical greater than sorting: ");
         for (int i = 0; i < items.Length; i++)
         {
             Console.WriteLine(items[i]);
@@ -85,7 +85,7 @@ public static class Program
 
         // Passing a Delegate with an Expression Lambda
 
-        Console.WriteLine("Numerical less than sorting: ");
+        Console.WriteLine($"{Environment.NewLine}Numerical less than sorting: ");
 
         for (int i = 0; i < items.Length; i++)
         {
