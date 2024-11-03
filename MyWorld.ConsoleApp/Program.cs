@@ -102,17 +102,19 @@ public static class Program
         HeaterDelegate heater = new(60);
         CoolerDelegate cooler = new(80);
 
-        // These are my two subscribers
-        thermostat.OnTemperatureChange += heater.OnTemperatureChanged;
-        thermostat.OnTemperatureChange += cooler.OnTemperatureChanged;
+        Action<float> delegate1;
+        Action<float> delegate2;
+        Action<float>? delegate3;
 
-        Console.Write("Enter temperature: ");
-        string? temperature = Console.ReadLine();
-        if (!int.TryParse(temperature, out int currentTemperature))
-        {
-            Console.WriteLine($"'{temperature}' is not a valid integer.");
-            return;
-        }
-        thermostat.CurrentTemperature = currentTemperature;
+        delegate1 = heater.OnTemperatureChanged;
+        delegate2 = cooler.OnTemperatureChanged;
+
+        Console.WriteLine("Invoke both delegates: ");
+        delegate3 = delegate1 + delegate2;
+        delegate3(90);
+
+        Console.WriteLine("Invoke only delegate2");
+        delegate3 -= delegate1;
+        delegate3!(30);
     }
 }
